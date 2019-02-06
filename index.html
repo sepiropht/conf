@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rust 🦀 and Wasm 🕸 | SFHTML5</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" rel="stylesheet"/>
+    <link href="public/custom.css" type="text/css" rel="stylesheet">
+    <link rel="shortcut icon" href="/public/img/rust-logo-blk.svg" type="image/x-icon">
+    <style>
+     .inverse {
+         filter: invert(100%);
+     }
+
+     .footnote {
+         bottom:12px;
+         opacity:0.75;
+         position:absolute;
+         left:20px;
+     }
+
+     a[href$=".svg"] {
+         display: block;
+         max-width: 80%;
+         max-height: 80%;
+         margin: 0 auto;
+     }
+
+     a[href$=".svg"] > object {
+         pointer-events: none;
+     }
+
+     .remark-slide img {
+         max-width: 80%;
+         max-height: 80%;
+     }
+
+     .swing-crab-bg {
+         background: white url(./public/img/swinging-crab.jpg) no-repeat;
+         background-position: bottom right -30% !important;
+     }
+
+     .swing-crab-bg .remark-slide-content {
+         max-width: 50%;
+     }
+
+     blockquote {
+         font-style: italic;
+     }
+
+     blockquote::before {
+         content: '“';
+         opacity: .5;
+         font-size: 400%;
+         float: left;
+         margin-right: .25em;
+         margin-top: -.5em;
+     }
+
+     .js-code {
+         background-image: url(./public/img/js.png);
+         background-repeat: no-repeat;
+         background-position: 95% 5% !important;
+         background-size: 5em 5em !important;
+         background-color: #f0f0f0;
+     }
+
+     .rust-code {
+         background-image: url(./public/img/rust-logo-blk.svg);
+         background-repeat: no-repeat;
+         background-position: 97% 3% !important;
+         background-size: 6em 6em !important;
+         background-color: #f0f0f0;
+     }
+
+     .filename {
+         position: absolute;
+         top: 5%;
+         left: 5%;
+         font-family: monospace;
+         font-size: 125%;
+         opacity: .8;
+     }
+
+     .rust-code code, .js-code code {
+         border: none;
+         background: transparent !important;
+     }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+    </textarea>
+    <script src="public/remark.js" type="text/javascript"></script>
+    <script type="text/javascript">
+     async function main() {
+         const slides = await fetch("./slides.md");
+         const slidesText = await slides.text();
+         document.getElementById("source").textContent = slidesText;
+         window.slideshow = remark.create();
+     }
+     main();
+    </script>
+  </body>
+</html>
